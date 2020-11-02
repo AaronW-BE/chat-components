@@ -1,0 +1,74 @@
+
+
+.bubble {
+    max-width: 500px;
+    min-height: 1em;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    text-align: left;
+    font-size: 14px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    margin: 0 10px;
+}
+
+.bubble::before,.bubble::after {
+    content: " ";
+    position: absolute;
+    top: 14px;
+    border: 6px solid transparent;
+}
+
+.bubble.left::after, .bubble.left::before {
+    right: 100%;
+}
+
+.bubble.left::after {
+    border-right-color: #ffffff;
+    border-right-width: 4px;
+}
+
+.bubble.left.dark::after {
+    border-right-color: #323232;
+}
+
+.bubble.right::after {
+    left: 100%;
+}
+
+.bubble.default {
+    background: #fff;
+}
+
+.bubble.default.dark {
+    background: #323232;
+    color: white;
+}
+
+.bubble .plain {
+    padding: 9px 13px;
+}
+
+.bubble.bubble_primary{
+    background-color: #b2e281;
+}
+.bubble.bubble_primary.right::after {
+    border-left-color: #b2e281;
+    border-left-width: 4px;
+}
+
+.bubble_cont {
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 25px;
+}
+
+pre {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    white-space: pre-wrap;
+    word-break: normal;
+}
