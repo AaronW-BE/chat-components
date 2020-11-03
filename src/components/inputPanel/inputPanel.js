@@ -29,9 +29,9 @@ class InputPanel extends React.Component{
             if (this.keyPressed('Shift') && this.keyPressed('Enter')) {
                 console.log('pressed shift and enter')
                 this.setState({
-                    inputText: this.state.inputText + "\n"
+                    inputText: this.state.inputText
                 })
-                console.log(this.state.inputText + '\n')
+                console.log(this.state.inputText)
                 return;
             }
             if (this.keyPressed('Enter')) {
@@ -61,6 +61,12 @@ class InputPanel extends React.Component{
     };
 
     onInputEvent = (e) => {
+        if (e.target.value === '\n') {
+            this.setState({
+                inputText: ''
+            })
+            return
+        }
         this.setState({
             inputText: e.target.value
         })
@@ -78,9 +84,19 @@ class InputPanel extends React.Component{
                 {/*</div>*/}
                 <div className="input-panel">
                     <FontAwesomeIcon icon={faMicrophone} className="emotion-icon-btn" />
-                    <input value={this.state.inputText} type="text" className="input-box"
-                           onKeyUp={this.onKeyUp}
-                           onKeyDownCapture={this.onInputKeyDown} onInput={this.onInputEvent} />
+                    <div className="expandingArea">
+                        <pre>{this.state.inputText}<br/></pre>
+                        <textarea
+                            className="input-box"
+                            onInput={this.onInputEvent}
+                            onKeyUp={this.onKeyUp}
+                            onKeyDownCapture={this.onInputKeyDown}
+                            value={this.state.inputText}
+                        />
+                    </div>
+                    {/*<input value={this.state.inputText} type="text" className="input-box"*/}
+                    {/*       onKeyUp={this.onKeyUp}*/}
+                    {/*       onKeyDownCapture={this.onInputKeyDown} onInput={this.onInputEvent} />*/}
                     <FontAwesomeIcon icon={faGrin} className="emotion-icon-btn" />
                 </div>
             </>

@@ -18,3 +18,23 @@
     margin-left: 8px;
     margin-right: 8px;
 }
+
+.expandingArea {
+    position: relative;
+    flex: 1;
+}
+.expandingArea pre {
+    display: block;
+    visibility: hidden;
+    box-sizing: border-box;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.expandingArea textarea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
