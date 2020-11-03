@@ -33,7 +33,7 @@ export const themeTypes = {
 };
 
 function Message(props) {
-    const {self} = props;
+    const {self, text} = props;
     return (
         <div className={`message ${self ? 'me' : ''}`}>
             <div className="message_system">
@@ -41,7 +41,7 @@ function Message(props) {
             </div>
             <Bubble direction={ self ? 'right' : 'left' }
                     type={BUBBLE_TYPES.PLAIN}
-                    text="tewefadfasdfdsafdfasfasfasfasfsafasfasfsakfjadoftewefadfasdfdsafdfasfasfasfasfsafasfasfsakfjadofijawdiofjawefpiojasdifoajsdfiasjdfosdfjpasodfijasfpoasidjfsojsdafsdtewefadfasdfdsafdfasfasfasfasfsafasfasfsakfjadofijawdiofjawefpiojasdifoajsdfiasjdfosdfjpasodfijasfpoasidjfsojsdafsdijawdiofjawefpiojasdifoajsdfiasjdfosdfjpasodfijasfpoasidjfsojsdafsd"
+                    text={text}
                     isPrimary={self} />
             <img className="avatar" src={avatar} alt=""/>
         </div>

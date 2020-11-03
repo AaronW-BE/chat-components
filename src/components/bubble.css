@@ -52,10 +52,10 @@
 }
 
 .bubble.bubble_primary{
-    background-color: #b2e281;
+    background-color: #4ee356;
 }
 .bubble.bubble_primary.right::after {
-    border-left-color: #b2e281;
+    border-left-color: #4ee356;
     border-left-width: 4px;
 }
 
